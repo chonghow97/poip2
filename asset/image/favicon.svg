@@ -1,0 +1,69 @@
+<svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="38.843 28.5 75.602 88.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f1a103;
+      }
+
+      .cls-2 {
+        fill: #91dc5a;
+      }
+
+      .cls-3 {
+        filter: url(#Ellipse_3);
+      }
+
+      .cls-4 {
+        filter: url(#Ellipse_2);
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_1);
+      }
+
+      .cls-6 {
+        filter: url(#Path_1);
+      }
+    </style>
+    <filter id="Path_1" x="38.843" y="28.5" width="75.602" height="88.5" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_1" x="53.169" y="78.346" width="22.131" height="22.131" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_2" x="77.954" y="82.477" width="22.131" height="22.131" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_3" x="65.562" y="86.607" width="22.131" height="22.131" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-6" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="Path_1-2" data-name="Path 1" class="cls-1" d="M102.949,54.862,85.964,26.283V12.037A6.2,6.2,0,0,0,83.9,0H67.376A6.2,6.2,0,0,0,65.31,12.037V26.283L48.327,54.86A10.327,10.327,0,0,0,57.182,70.5h36.91a10.327,10.327,0,0,0,8.857-15.638ZM67.376,4.131H83.9a2.065,2.065,0,1,1,0,4.131H67.376a2.065,2.065,0,0,1,0-4.131Zm1.776,23.775a2.066,2.066,0,0,0,.29-1.055V12.393H81.834v4.131H79.768a2.065,2.065,0,1,0,0,4.131h2.065v4.131H79.768a2.065,2.065,0,0,0,0,4.131h2.956l9.06,15.245a13.1,13.1,0,0,1-5.82,1.554c-4.815,0-8.914-3.573-8.955-3.609h0c-.251-.224-5.307-4.652-11.7-4.652a14.494,14.494,0,0,0-1.91.129Zm30.333,35.32a6.127,6.127,0,0,1-5.392,3.143H57.182a6.2,6.2,0,0,1-5.309-9.392l8.468-14.249a12.29,12.29,0,0,1,4.968-1.145c4.815,0,8.914,3.573,8.951,3.606.213.19,5.285,4.656,11.7,4.656A17.145,17.145,0,0,0,93.9,47.721l5.5,9.256,0,.007A6.126,6.126,0,0,1,99.484,63.226Z" transform="translate(1.01 34.5)"/>
+  </g>
+  <g class="cls-5" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <circle id="Ellipse_1-2" data-name="Ellipse 1" class="cls-2" cx="2.065" cy="2.065" r="2.065" transform="translate(62.17 84.35)"/>
+  </g>
+  <g class="cls-4" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <circle id="Ellipse_2-2" data-name="Ellipse 2" class="cls-2" cx="2.065" cy="2.065" r="2.065" transform="translate(86.95 88.48)"/>
+  </g>
+  <g class="cls-3" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <circle id="Ellipse_3-2" data-name="Ellipse 3" class="cls-2" cx="2.065" cy="2.065" r="2.065" transform="translate(74.56 92.61)"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		- var title = "index"
+		include _header
+	body#index
+		#index-left
+			#branding
+				img(src="../asset/image/favicon.svg")
+				#index-slogan
+					h3 INVENTORY
+					h6 Secure Your Database
+		#index-right
+			#index-container
+				img(src="../asset/image/favicon.svg")
+				hr
+				form
+					#index-padding
+						label Email
+						input(type="text")
+					#index-padding
+						label Password
+						input(type="text")
+					input(type='submit')
+
+

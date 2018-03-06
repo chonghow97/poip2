@@ -1,0 +1,82 @@
+@import "./base.sass"
+body#index
+	height: 100vh
+	background: url('../asset/image/index_background.png')
+	background-size: auto
+	display: flex
+
+#index-left
+	flex: .7
+	#branding
+		cursor: pointer
+		-webkit-user-drag: none
+		-webkit-user-select: none
+		img
+			width: 30%
+			-webkit-user-drag: none
+			-webkit-user-select: none
+		margin: 1rem
+		width: 10rem
+		height: 3rem
+		display: flex
+		#index-slogan
+			display: flex
+			flex-direction: column
+			h3
+				color: white
+				text-shadow: 2px 2px 3px black
+			h6
+				color: yellow
+				text-shadow: 2px 2px 5px black
+				font-style: italic
+#index-right
+	flex: .3
+	background: rgba(#514F85, .87)
+	box-shadow: -10px 0px 6px rgba(black, .54)
+	#index-container
+		width: 70%
+		margin: auto
+		img
+			width: 20%
+			padding: 1rem
+			margin: 5rem 0 0 6.5rem
+		hr
+			border: 3px solid white
+		form
+			height: 20rem
+			margin: 3rem 0 0 0
+			display: inline-block
+			padding: 0 2rem
+			color: white
+			label
+				font-size: 20px
+			input[type="text"]
+				background: none
+				border: 2px solid white
+				padding: .3rem .6rem 
+				width: 100%
+				border-radius: 4px
+				margin-top: .3rem
+				color: white
+				&:focus
+					outline: none
+					background: rgba(white, .5)
+			input[type="submit"]
+				display: block
+				margin: 1rem auto
+				padding: .3rem
+				width: 50%
+				background: none
+				border: 1px solid white
+				color: white
+				font-weight: bold
+				border-radius: 4px
+				font-size: 18px
+				cursor: pointer
+				transition: all .4s
+				&:hover
+					color: black
+					background: white
+#index-padding
+	padding-bottom: 1rem
+
