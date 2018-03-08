@@ -354,7 +354,7 @@ body#index {
       color: white; }
       #index-right #index-container form label {
         font-size: 20px; }
-      #index-right #index-container form input[type="text"] {
+      #index-right #index-container form input[type="text"], #index-right #index-container form input[type='password'] {
         background: none;
         border: 2px solid white;
         padding: .3rem .6rem;
@@ -362,7 +362,7 @@ body#index {
         border-radius: 4px;
         margin-top: .3rem;
         color: white; }
-        #index-right #index-container form input[type="text"]:focus {
+        #index-right #index-container form input[type="text"]:focus, #index-right #index-container form input[type='password']:focus {
           outline: none;
           background: rgba(255, 255, 255, 0.5); }
       #index-right #index-container form input[type="submit"] {
