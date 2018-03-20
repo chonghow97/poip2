@@ -26,7 +26,7 @@ gulp.task('jade',function () {
 
 gulp.task('serve', function () {
     browserSync.init({
-        proxy: 'localhost:80',
+        proxy: 'localhost:8002',
         port: '7777'
     });
     gulp.watch("./*.php").on("change", reload);

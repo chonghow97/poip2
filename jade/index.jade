@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var title = "index"
+		- var title = "Inventory System"
 		include _header
 	body#index
 		#index-left
@@ -14,13 +14,11 @@ html
 			#index-container
 				img(src="../asset/image/favicon.svg")
 				hr
-				form
-					#index-padding
-						label Email
-						input(type="text" required)
-					#index-padding
-						label Password
-						input(type="password" required)
+				form(method="post" action="")
+					for a in [["Email","text","umemail"],["Password","password","upassword"]]
+						#index-padding
+							label=a[0]
+							input(type=a[1] name=a[2] required)
 					input(type='submit')
 
 
