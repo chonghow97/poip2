@@ -6,7 +6,7 @@ var reload      = browserSync.reload;
 
 //sass to css
 gulp.task('sass',function(){
-	return gulp.src('./sass/*.sass')
+	return gulp.src('./sass/style.sass')
 		.pipe(sass())
 		.pipe(gulp.dest('./css'))
 		.pipe(browserSync.stream());
