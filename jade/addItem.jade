@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var title = "Admin"
+		- var title = "Add User"
 		include _header
 	body#admin
 		include header
@@ -17,10 +17,15 @@ html
 							input(type="text")
 						p
 							label Category
-							select!="<? php echo 'hi';?>"
+							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
+								option=option
 						p
 							label Unit of measurement
 							input(type="text")
 						p
 							label Status
-							
+							select
+								option Avalible
+								option Unavalible
+						p
+							input(type="submit")

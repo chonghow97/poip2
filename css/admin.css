@@ -15,7 +15,7 @@
 #form_container {
   background: white;
   margin: 1rem 10rem;
-  height: 20rem;
+  height: 30rem;
   border-radius: 1rem;
   display: flex; }
   #form_container form {
@@ -27,8 +27,9 @@
         display: inline-block;
         width: 20rem;
         font-weight: bold; }
-      #form_container form p button {
-        margin-right: 1rem;
-        padding: .3rem 1rem;
-        background: #CECECE;
-        border: 1px solid #707070; }
+      #form_container form p input[type="submit"] {
+        margin-left: 27rem;
+        background: none;
+        border: 1px solid black;
+        padding: .3rem .5rem;
+        cursor: pointer; }
