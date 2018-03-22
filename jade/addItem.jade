@@ -1,0 +1,26 @@
+doctype html
+html
+	head
+		- var title = "Admin"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Item
+				#form_container
+					form(action!="<?php echo 'hello'; ?>")
+						p
+							label Item Name
+							input(type="text")
+						p
+							label Category
+							select!="<? php echo 'hi';?>"
+						p
+							label Unit of measurement
+							input(type="text")
+						p
+							label Status
+							

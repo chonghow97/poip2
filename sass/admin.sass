@@ -1,66 +1,31 @@
-#header
-	background: #515763
-	height: 3rem
+#container
 	display: flex
-	#branding1
-		display: flex
-		flex: 4
-		img
-			width: 14%
-			margin-left: 1rem
-		#slogan
-			box-sizing: border-box
-			padding-top: .6rem
-		h3
-			color: rgba(white, .9)
-			font-size: 14px
-			text-shadow: 3px 0px 4px rgba(black, .66)
-		h6
-			font-size: 10px
-			font-weight: normal
-			color: lighten(yellow, 15%)
-			font-style: italic
-			text-shadow: 3px 0px 4px rgba(black, .66)
-#adminpanel
-	background: black
+	background: #EBEBEB
+#container1
 	flex: 1
-	display: flex
-	position: relative
-	img
-		box-sizing: border-box
-		padding: .8rem 0
-		margin-left: -3rem
-	#notifi
-		margin: auto 0
-		padding: .1rem
-		border-radius: 50%
-		background: white
-		position: absolute
-		left: 2rem
-		top: .6rem
-		font-size: 10px
-		display: none
-	ul
-		list-style: none
-		li
-			color: white
-			width: 7rem
-			text-align: center
-			line-height: 3rem
-			cursor: pointer
-			&:hover
-				background: lighten(black, 15%)
-				ul
-					display: block
-		ul
-			display: none
-			li
-				background: lighten(black, 20%)
-				&:hover
-					background: lighten(black, 25%)
-#pic
+#title
+	height: 3rem
 	background: white
-	margin: auto
-	padding: 1rem
-	border-radius: 50%
-
+	h3
+		line-height: 3rem
+		margin-left: 1rem
+#form_container
+	background: white
+	margin: 1rem 10rem
+	height: 20rem
+	border-radius: 1rem
+	display: flex
+	form
+		width: 70%
+		margin: auto
+		p
+			padding-bottom: 1rem
+			label
+				display: inline-block
+				width: 20rem
+				font-weight: bold
+			button
+				margin-right: 1rem
+				padding: .3rem 1rem
+				background: #CECECE
+				border: 1px solid #707070

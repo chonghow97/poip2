@@ -1,67 +1,34 @@
-#header {
-  background: #515763;
-  height: 3rem;
-  display: flex; }
-  #header #branding1 {
-    display: flex;
-    flex: 4; }
-    #header #branding1 img {
-      width: 14%;
-      margin-left: 1rem; }
-    #header #branding1 #slogan {
-      box-sizing: border-box;
-      padding-top: .6rem; }
-    #header #branding1 h3 {
-      color: rgba(255, 255, 255, 0.9);
-      font-size: 14px;
-      text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
-    #header #branding1 h6 {
-      font-size: 10px;
-      font-weight: normal;
-      color: #ffff4d;
-      font-style: italic;
-      text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
-
-#adminpanel {
-  background: black;
-  flex: 1;
+#container {
   display: flex;
-  position: relative; }
-  #adminpanel img {
-    box-sizing: border-box;
-    padding: .8rem 0;
-    margin-left: -3rem; }
-  #adminpanel #notifi {
-    margin: auto 0;
-    padding: .1rem;
-    border-radius: 50%;
-    background: white;
-    position: absolute;
-    left: 2rem;
-    top: .6rem;
-    font-size: 10px;
-    display: none; }
-  #adminpanel ul {
-    list-style: none; }
-    #adminpanel ul li {
-      color: white;
-      width: 7rem;
-      text-align: center;
-      line-height: 3rem;
-      cursor: pointer; }
-      #adminpanel ul li:hover {
-        background: #262626; }
-        #adminpanel ul li:hover ul {
-          display: block; }
-    #adminpanel ul ul {
-      display: none; }
-      #adminpanel ul ul li {
-        background: #333333; }
-        #adminpanel ul ul li:hover {
-          background: #404040; }
+  background: #EBEBEB; }
 
-#pic {
+#container1 {
+  flex: 1; }
+
+#title {
+  height: 3rem;
+  background: white; }
+  #title h3 {
+    line-height: 3rem;
+    margin-left: 1rem; }
+
+#form_container {
   background: white;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 50%; }
+  margin: 1rem 10rem;
+  height: 20rem;
+  border-radius: 1rem;
+  display: flex; }
+  #form_container form {
+    width: 70%;
+    margin: auto; }
+    #form_container form p {
+      padding-bottom: 1rem; }
+      #form_container form p label {
+        display: inline-block;
+        width: 20rem;
+        font-weight: bold; }
+      #form_container form p button {
+        margin-right: 1rem;
+        padding: .3rem 1rem;
+        background: #CECECE;
+        border: 1px solid #707070; }

@@ -1,0 +1,32 @@
+#sidebar {
+  height: calc(100vh - 3rem);
+  background: rgba(0, 0, 0, 0.7);
+  width: 15%;
+  position: relative; }
+  #sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    #sidebar ul p {
+      line-height: 3rem;
+      margin-left: 1rem; }
+    #sidebar ul li {
+      background: #515763;
+      font-weight: bold;
+      border-bottom: 1px solid #707070;
+      border-top: 1px solid #707070;
+      text-align: center;
+      color: white;
+      display: flex;
+      height: 3rem; }
+      #sidebar ul li img {
+        width: 15%;
+        padding-left: 2rem; }
+      #sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        background: #515763;
+        display: flex;
+        width: 100%; }
+        #sidebar ul li a:hover {
+          background: #68707f; }

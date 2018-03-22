@@ -1,0 +1,69 @@
+#header {
+  background: #515763;
+  height: 3rem;
+  display: flex; }
+  #header #branding1 {
+    display: flex; }
+    #header #branding1 img {
+      width: 14%;
+      margin-left: 1rem; }
+    #header #branding1 #slogan {
+      box-sizing: border-box;
+      padding-top: .6rem; }
+    #header #branding1 h3 {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
+    #header #branding1 h6 {
+      font-size: 10px;
+      font-weight: normal;
+      color: #ffff4d;
+      font-style: italic;
+      text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
+
+#adminpanel {
+  display: flex;
+  flex: 1;
+  position: relative; }
+  #adminpanel img {
+    flex: 1;
+    width: 5%;
+    padding: 0 1rem;
+    margin: auto 0;
+    height: 50%; }
+  #adminpanel #notifi {
+    margin: auto 0;
+    padding: .1rem;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    left: 2rem;
+    top: .6rem;
+    font-size: 10px;
+    display: none; }
+  #adminpanel ul {
+    flex: 1;
+    list-style: none; }
+    #adminpanel ul li {
+      color: white;
+      width: 7rem;
+      text-align: center;
+      line-height: 3rem;
+      cursor: pointer; }
+      #adminpanel ul li:active ul {
+        display: block; }
+    #adminpanel ul ul {
+      display: none; }
+      #adminpanel ul ul li {
+        background: #333333; }
+        #adminpanel ul ul li:hover {
+          background: #404040; }
+
+#pic {
+  background: white;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 50%; }
+
+#center {
+  flex: 4; }

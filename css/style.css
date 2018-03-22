@@ -390,8 +390,7 @@ body#index {
   height: 3rem;
   display: flex; }
   #header #branding1 {
-    display: flex;
-    flex: 4; }
+    display: flex; }
     #header #branding1 img {
       width: 14%;
       margin-left: 1rem; }
@@ -410,14 +409,15 @@ body#index {
       text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
 
 #adminpanel {
-  background: black;
-  flex: 1;
   display: flex;
+  flex: 1;
   position: relative; }
   #adminpanel img {
-    box-sizing: border-box;
-    padding: .8rem 0;
-    margin-left: -3rem; }
+    flex: 1;
+    width: 5%;
+    padding: 0 1rem;
+    margin: auto 0;
+    height: 50%; }
   #adminpanel #notifi {
     margin: auto 0;
     padding: .1rem;
@@ -429,6 +429,7 @@ body#index {
     font-size: 10px;
     display: none; }
   #adminpanel ul {
+    flex: 1;
     list-style: none; }
     #adminpanel ul li {
       color: white;
@@ -436,10 +437,8 @@ body#index {
       text-align: center;
       line-height: 3rem;
       cursor: pointer; }
-      #adminpanel ul li:hover {
-        background: #262626; }
-        #adminpanel ul li:hover ul {
-          display: block; }
+      #adminpanel ul li:active ul {
+        display: block; }
     #adminpanel ul ul {
       display: none; }
       #adminpanel ul ul li {
@@ -452,3 +451,74 @@ body#index {
   margin: auto;
   padding: 1rem;
   border-radius: 50%; }
+
+#center {
+  flex: 4; }
+
+#sidebar {
+  height: calc(100vh - 3rem);
+  background: rgba(0, 0, 0, 0.7);
+  width: 15%;
+  position: relative; }
+  #sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; }
+    #sidebar ul p {
+      line-height: 3rem;
+      margin-left: 1rem; }
+    #sidebar ul li {
+      background: #515763;
+      font-weight: bold;
+      border-bottom: 1px solid #707070;
+      border-top: 1px solid #707070;
+      text-align: center;
+      color: white;
+      display: flex;
+      height: 3rem; }
+      #sidebar ul li img {
+        width: 15%;
+        padding-left: 2rem; }
+      #sidebar ul li a {
+        color: white;
+        text-decoration: none;
+        background: #515763;
+        display: flex;
+        width: 100%; }
+        #sidebar ul li a:hover {
+          background: #68707f; }
+
+#container {
+  display: flex;
+  background: #EBEBEB; }
+
+#container1 {
+  flex: 1; }
+
+#title {
+  height: 3rem;
+  background: white; }
+  #title h3 {
+    line-height: 3rem;
+    margin-left: 1rem; }
+
+#form_container {
+  background: white;
+  margin: 1rem 10rem;
+  height: 20rem;
+  border-radius: 1rem;
+  display: flex; }
+  #form_container form {
+    width: 70%;
+    margin: auto; }
+    #form_container form p {
+      padding-bottom: 1rem; }
+      #form_container form p label {
+        display: inline-block;
+        width: 20rem;
+        font-weight: bold; }
+      #form_container form p button {
+        margin-right: 1rem;
+        padding: .3rem 1rem;
+        background: #CECECE;
+        border: 1px solid #707070; }
