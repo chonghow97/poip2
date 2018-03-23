@@ -310,25 +310,25 @@ body#index {
 
 #index-left {
   flex: .7; }
-  #index-left #branding {
-    cursor: pointer;
+  #index-left a {
+    text-decoration: none;
     -webkit-user-drag: none;
     -webkit-user-select: none;
     margin: 1rem;
     width: 10rem;
     height: 3rem;
     display: flex; }
-    #index-left #branding img {
+    #index-left a img {
       width: 30%;
       -webkit-user-drag: none;
       -webkit-user-select: none; }
-    #index-left #branding #index-slogan {
+    #index-left a #index-slogan {
       display: flex;
       flex-direction: column; }
-      #index-left #branding #index-slogan h3 {
+      #index-left a #index-slogan h3 {
         color: white;
         text-shadow: 2px 2px 3px black; }
-      #index-left #branding #index-slogan h6 {
+      #index-left a #index-slogan h6 {
         color: yellow;
         text-shadow: 2px 2px 5px black;
         font-style: italic; }
@@ -389,19 +389,20 @@ body#index {
   background: #515763;
   height: 3rem;
   display: flex; }
-  #header #branding1 {
-    display: flex; }
-    #header #branding1 img {
+  #header a {
+    display: flex;
+    text-decoration: none; }
+    #header a img {
       width: 14%;
       margin-left: 1rem; }
-    #header #branding1 #slogan {
+    #header a #slogan {
       box-sizing: border-box;
       padding-top: .6rem; }
-    #header #branding1 h3 {
+    #header a h3 {
       color: rgba(255, 255, 255, 0.9);
       font-size: 14px;
       text-shadow: 3px 0px 4px rgba(0, 0, 0, 0.66); }
-    #header #branding1 h6 {
+    #header a h6 {
       font-size: 10px;
       font-weight: normal;
       color: #ffff4d;
@@ -468,7 +469,7 @@ body#index {
       line-height: 3rem;
       margin-left: 1rem; }
     #sidebar ul li {
-      background: #515763;
+      background: ligten(#515763, 15%);
       font-weight: bold;
       border-bottom: 1px solid #707070;
       border-top: 1px solid #707070;
