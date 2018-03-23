@@ -16,7 +16,7 @@
     <div id="index-right">
       <div id="index-container"><img src="../asset/image/favicon.svg">
         <hr>
-        <form method="post" action="">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
           <div id="index-padding">
             <label>Email</label>
             <input type="text" name="umemail" required>
@@ -25,7 +25,7 @@
             <label>Password</label>
             <input type="password" name="upassword" required>
           </div>
-          <input type="submit">
+          <input type="submit" name="sub">
         </form>
       </div>
     </div>

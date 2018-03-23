@@ -14,11 +14,11 @@ html
 			#index-container
 				img(src="../asset/image/favicon.svg")
 				hr
-				form(method="post" action="")
+				form(method="post" action!="<?php echo $_SERVER['PHP_SELF']; ?>")
 					for a in [["Email","text","umemail"],["Password","password","upassword"]]
 						#index-padding
 							label=a[0]
 							input(type=a[1] name=a[2] required)
-					input(type='submit')
+					input(type='submit' name="sub")
 
 
