@@ -302,6 +302,23 @@ template {
   padding: 0;
   font-family: 'segoe UI'; }
 
+table {
+  width: 90%;
+  margin: 1rem auto;
+  line-height: 2rem;
+  text-align: center;
+  border-collapse: collapse; }
+  table tr:nth-child(odd) {
+    background: #f1f1f1; }
+  table tr:nth-child(odd) {
+    background: #fff; }
+  table th {
+    background: #9E9E9E;
+    color: white;
+    border-right: 1px solid white; }
+  table td {
+    border-right: 1px solid white; }
+
 body#index {
   height: 100vh;
   background: url("../asset/image/index_background.png");
@@ -450,8 +467,7 @@ body#index {
 #sidebar {
   height: calc(100vh - 3rem);
   background: rgba(0, 0, 0, 0.7);
-  width: 15%;
-  position: relative; }
+  width: 15%; }
   #sidebar ul {
     list-style: none;
     display: flex;
@@ -554,3 +570,45 @@ body#index {
   height: calc(15rem - 2px); }
   #chart-inside h1 {
     margin: auto; }
+
+#container2 {
+  height: 20rem;
+  height: calc(100vh - 6rem);
+  overflow: auto; }
+
+#filter {
+  width: 90%;
+  border: 2px solid #c7c7c7;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem 0 0 0;
+  position: relative; }
+  #filter input {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem; }
+    #filter input[type="text"] {
+      right: 5rem;
+      padding: .1rem .3rem; }
+    #filter input[type="submit"] {
+      padding: .1rem .3rem; }
+  #filter p {
+    padding: 0 0 1rem 1rem;
+    color: #787878;
+    font-weight: bold; }
+    #filter p label {
+      display: inline-block;
+      width: 6rem; }
+    #filter p span {
+      margin-right: 1rem;
+      padding: .1rem .5rem;
+      border: 1px solid #707070;
+      cursor: pointer;
+      font-weight: normal;
+      color: black;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none; }
