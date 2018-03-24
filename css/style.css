@@ -411,50 +411,41 @@ body#index {
 
 #adminpanel {
   display: flex;
+  position: relative;
   flex: 1;
-  position: relative; }
+  justify-content: flex-end; }
   #adminpanel img {
-    flex: 1;
-    width: 5%;
     padding: 0 1rem;
     margin: auto 0;
     height: 50%; }
-  #adminpanel #notifi {
-    margin: auto 0;
-    padding: .1rem;
-    border-radius: 50%;
-    background: white;
-    position: absolute;
-    left: 2rem;
-    top: .6rem;
-    font-size: 10px;
-    display: none; }
+    #adminpanel img.icon {
+      border-radius: 50%;
+      height: 2rem; }
   #adminpanel ul {
-    flex: 1;
-    list-style: none; }
+    list-style: none;
+    text-align: center;
+    flex: .1; }
     #adminpanel ul li {
       color: white;
-      width: 7rem;
-      text-align: center;
-      line-height: 3rem;
-      cursor: pointer; }
-      #adminpanel ul li:active ul {
-        display: block; }
-    #adminpanel ul ul {
-      display: none; }
-      #adminpanel ul ul li {
-        background: #333333; }
-        #adminpanel ul ul li:hover {
-          background: #404040; }
-
-#pic {
-  background: white;
-  margin: auto;
-  padding: 1rem;
-  border-radius: 50%; }
-
-#center {
-  flex: 4; }
+      font-weight: bold;
+      line-height: 3rem; }
+      #adminpanel ul li:hover {
+        background: #5c6371; }
+        #adminpanel ul li:hover ul {
+          display: block; }
+      #adminpanel ul li span {
+        padding-left: .6rem;
+        font-size: 10px; }
+      #adminpanel ul li ul {
+        display: none;
+        margin: 0; }
+        #adminpanel ul li ul li:hover {
+          background: #68707f; }
+        #adminpanel ul li ul li a {
+          text-decoration: none;
+          color: white;
+          padding: 0 1rem;
+          box-sizing: border-box; }
 
 #sidebar {
   height: calc(100vh - 3rem);
