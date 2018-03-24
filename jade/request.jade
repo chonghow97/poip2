@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		- var title = "Add User"
+		include _header
+	body#admin
+		include userheader
+		#container
+			include usersidebar
+			#container1
+				#title
+					h3 Item
+				#form_container
+					form
+						p
+							label Item Name
+							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
+								option=option
+							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
+								option=option
+						p
+							label Quantity
+							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
+								option=option
+							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
+								option=option
+						p
+							label Purpose
+						p
+							textarea
+						p
+							input(type="submit")

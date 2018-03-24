@@ -15,15 +15,22 @@ html
 						p
 							label Category:
 							for a in ["Apparatus","Consumable","Equipment","Reagent"]
-								span= a
+								label
+									input(type="radio" name="category")
+									|#{a}
+
 						p
 							label Brand:
 							select: for b in [1,2,3,4]
 								option= b
 						p
 							label Status:
-							span Available
-							span Unavailable
+							label
+								input(type="radio" name="status")
+								|Available
+							label
+								input(type="radio" name="status")
+								|Unavailable
 						input(type="text")
 						input(type="submit" value="Search")
 					table
@@ -32,5 +39,8 @@ html
 								th= a
 						for tr in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 							tr
-								for b in [1,2,3,4,5,6]
+								for b in [1,2,3,4,5]
 									td= b
+								td
+									img(src="./asset/image/table-edit.svg")
+									img(src="./asset/image/x.svg")

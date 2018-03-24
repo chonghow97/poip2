@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "browser-sync": "^2.23.6",
-    "gulp-jade-php": "^2.0.0-0",
-    "jade-php": "^0.1.4"
+    "gulp-jade-php": "^2.0.0-0"
   }
 }

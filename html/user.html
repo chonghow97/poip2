@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="../asset/image/favicon.png">
+  </head>
+  <body id="admin">
+    <div id="header"><a href="index.php"><img src="./asset/image/favicon.svg">
+        <div id="slogan">
+          <h3>Inventory</h3>
+          <h6>Secure your database</h6>
+        </div></a>
+      <div id="center"></div>
+      <div id="adminpanel"><img src="./asset/image/user.png" class="icon">
+        <ul>
+          <li>User<span>▼</span>
+            <ul>
+              <li><a href="#">Account</a></li>
+              <li><a href="index.php">Leave</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="container">
+      <div id="sidebar">
+        <ul>
+          <li><img src="./asset/image/navigation.svg">
+            <p>Navigation</p>
+          </li>
+          <li><img src="./asset/image/favicon.svg">
+            <p>Item</p>
+          </li>
+          <li><a href="request.php"><img src="./asset/image/request.svg">
+              <p>Request</p></a></li>
+          <li><a href="item.php"><img src="./asset/image/requestitem.svg">
+              <p>Request Item</p></a></li>
+          <li><a href="userhistory.php"><img src="./asset/image/history.svg">
+              <p>Item History</p></a></li>
+        </ul>
+      </div>
+      <div id="container1">
+        <div id="title">
+          <h3>User</h3>
+        </div>
+        <div id="container-z">
+          <div id="requested">
+            <h3>Requested Stock</h3>
+            <h3 class="number">
+              <?php 
+              	echo "0";
+              ?>
+            </h3>
+          </div>
+          <div id="expired">
+            <h3>Stock Expired</h3>
+            <h3 class="number">
+              <?php 
+              	echo "0";
+              ?>
+            </h3>
+          </div>
+        </div>
+        <div id="chart">
+          <div id="title">
+            <h3>Total Stock</h3>
+          </div>
+          <div id="chart-inside">
+            <h1>Chart here</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

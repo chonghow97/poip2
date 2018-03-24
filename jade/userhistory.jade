@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		- var title = "Edit Item"
+		include _header
+	body#admin
+		include userheader
+		#container
+			include usersidebar
+			#container1
+				#title
+					h3 History Item
+				#container2
+					form#filter
+							p
+								label Date
+								input(type="date")
+							input(type="text")
+							input(type="submit" value="Search")
+						table
+							tr
+								for a in ["Item Name","Catergory","Brand","Expire Date","Status"]
+									th= a
+							for tr in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,1,1,1,1,1]
+								tr
+									for b in [1,2,3,4,5]
+										td= b
