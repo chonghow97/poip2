@@ -524,3 +524,42 @@ body#index {
         border: 1px solid black;
         padding: .3rem .5rem;
         cursor: pointer; }
+
+#container-z {
+  display: flex;
+  height: 15rem; }
+
+#requested, #expired {
+  flex: 1;
+  background: #3E84C0;
+  margin: 2rem 5rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  position: relative; }
+  #requested h3, #expired h3 {
+    color: white; }
+    #requested h3.number, #expired h3.number {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem; }
+
+#expired {
+  background: #EF6F6C; }
+
+#chart {
+  border: 1px solid grey;
+  width: 70%;
+  height: 18rem;
+  margin: auto;
+  box-sizing: border-box; }
+  #chart #title {
+    background: #6049AE; }
+    #chart #title h3 {
+      color: white; }
+
+#chart-inside {
+  display: flex;
+  background: white;
+  height: calc(15rem - 2px); }
+  #chart-inside h1 {
+    margin: auto; }

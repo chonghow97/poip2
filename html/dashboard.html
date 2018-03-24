@@ -30,7 +30,7 @@
     <div id="container">
       <div id="sidebar">
         <ul>
-          <li><a href="#"><img src="./asset/image/dashboard.svg">
+          <li><a href="dashboard.php"><img src="./asset/image/dashboard.svg">
               <p>Dashboard</p></a></li>
           <li><img src="./asset/image/favicon.svg">
             <p>Item</p>
@@ -52,7 +52,32 @@
         <div id="title">
           <h3>Dashboard</h3>
         </div>
-        <div id="form_container"></div>
+        <div id="container-z">
+          <div id="requested">
+            <h3>Requested Stock</h3>
+            <h3 class="number">
+              <?php 
+              	echo "0";
+              ?>
+            </h3>
+          </div>
+          <div id="expired">
+            <h3>Stock Expired</h3>
+            <h3 class="number">
+              <?php 
+              	echo "0";
+              ?>
+            </h3>
+          </div>
+        </div>
+        <div id="chart">
+          <div id="title">
+            <h3>Total Stock</h3>
+          </div>
+          <div id="chart-inside">
+            <h1>Chart here</h1>
+          </div>
+        </div>
       </div>
     </div>
   </body>

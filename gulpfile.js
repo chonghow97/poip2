@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var jade = require('gulp-jade');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
-var reload      = browserSync.reload;
+var reload = browserSync.reload;
 
 //sass to css
 gulp.task('sass',function(){
@@ -43,3 +43,4 @@ gulp.task('watch',function () {
 
 //Default
 gulp.task('default',['jade','sass','watch','serve']);
+

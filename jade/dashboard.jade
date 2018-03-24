@@ -1,0 +1,31 @@
+doctype html
+html
+	head
+		- var title = "Admin"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Dashboard
+				#container-z
+					#requested
+						h3 Requested Stock
+						h3.number
+							|<?php 
+							|	echo "0";
+							|?>
+					#expired
+						h3 Stock Expired
+						h3.number
+							|<?php 
+							|	echo "0";
+							|?>
+				#chart
+					#title
+						h3 Total Stock
+					#chart-inside
+						h1 Chart here
+					
