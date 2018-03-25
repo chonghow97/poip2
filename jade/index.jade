@@ -15,7 +15,7 @@ html
 				img(src="../asset/image/favicon.svg")
 				hr
 				form(method="post" action!="<?php echo $_SERVER['PHP_SELF']; ?>")
-					for a in [["Email","text","umemail"],["Password","password","upassword"]]
+					for a in [["Email","text","uemail"],["Password","password","upassword"]]
 						#index-padding
 							label=a[0]
 							input(type=a[1] name=a[2] required)

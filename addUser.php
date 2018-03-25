@@ -7,6 +7,11 @@
 		$email = $_POST['email'];
 		$role = $_POST['role'];
 		$sql = "INSERT INTO user VALUES(null,'$fullname','$password','$email','$role',false)";
+		if($result=mysqli_query($link,$sql)){
+			echo "<script>alert('Added Successfully')</script>";
+		}else{
+			echo "<script>alert('Failed')</script>";
+		}
 	}
 	
 	require './html/addUser.html';
