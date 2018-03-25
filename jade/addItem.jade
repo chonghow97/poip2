@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var title = "Add User"
+		- var title = "Add Item"
 		include _header
 	body#admin
 		include header
@@ -11,21 +11,31 @@ html
 				#title
 					h3 Item
 				#form_container
-					form(action!="<?php echo 'hello'; ?>")
+					form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
 						p
 							label Item Name
-							input(type="text")
+							input(type="text" name="name")
+
 						p
 							label Category
-							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
-								option=option
+							select(name="category").
+								<?php 
+									while($row = mysqli_fetch_assoc($result)){
+										echo "<option value='".$row['cid']."'>".$row['cname']."</option>";
+									}
+								 ?>
 						p
 							label Unit of measurement
-							input(type="text")
+							select(name="measure").
+								<?php 
+									while($row1 = mysqli_fetch_assoc($result1)){
+										echo "<option value='".$row1['mid']."'>".$row1['mname']."</option>";
+									}
+								 ?>
 						p
 							label Status
-							select
-								option Avalible
-								option Unavalible
+							select(name="status")
+								option(value="true") Available
+								option(value="false") Unavailable
 						p
-							input(type="submit")
+							input(type="submit" name="add")

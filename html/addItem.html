@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add User</title>
+    <title>Add Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -51,33 +51,40 @@
           <h3>Item</h3>
         </div>
         <div id="form_container">
-          <form action="<?php echo 'hello'; ?>">
+          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             <p>
               <label>Item Name</label>
-              <input type="text">
+              <input type="text" name="name">
             </p>
             <p>
               <label>Category</label>
-              <select>
-                <option>Apparatus</option>
-                <option>Consumable</option>
-                <option>Equipment</option>
-                <option>Reagent</option>
+              <select name="category">
+                <?php 
+                	while($row = mysqli_fetch_assoc($result)){
+                		echo "<option value='".$row['cid']."'>".$row['cname']."</option>";
+                	}
+                 ?>
               </select>
             </p>
             <p>
               <label>Unit of measurement</label>
-              <input type="text">
-            </p>
-            <p>
-              <label>Status</label>
-              <select>
-                <option>Avalible</option>
-                <option>Unavalible</option>
+              <select name="measure">
+                <?php 
+                	while($row1 = mysqli_fetch_assoc($result1)){
+                		echo "<option value='".$row1['mid']."'>".$row1['mname']."</option>";
+                	}
+                 ?>
               </select>
             </p>
             <p>
-              <input type="submit">
+              <label>Status</label>
+              <select name="status">
+                <option value="true">Available</option>
+                <option value="false">Unavailable</option>
+              </select>
+            </p>
+            <p>
+              <input type="submit" name="add">
             </p>
           </form>
         </div>
