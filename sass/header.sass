@@ -35,25 +35,26 @@
 			height: 2rem
 	ul
 		list-style: none
+		line-height: 3rem
+		color: white
+		z-index: 2
 		li
-			color: white
-			font-weight: bold
-			line-height: 3rem
+			a
+				color: white
+				justify-content: flex-end
+				margin-right: 1rem
 			&:hover
 				ul
-					background: #515763
 					display: block
-			span
-				padding-left: .6rem
-				font-size: 10px
+
 			ul
 				display: none
-				margin: 0
+				background: rgba(#515763, .8)
 				li
+
 					&:hover
-						background: lighten(#515763, 10%)
-					a
-						text-decoration: none
-						color: white
-						padding: 0 1rem
-						box-sizing: border-box
+	
+						background: rgba(lighten(#515763,20%), .8)
+
+			span
+				padding: 0 .3rem 0 .3rem

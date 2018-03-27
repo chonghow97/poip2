@@ -34,8 +34,9 @@ html
 								 ?>
 						p
 							label Status
-							select(name="status")
-								option(value="true") Available
-								option(value="false") Unavailable
+							input(type="radio" name="status" id="1" value="1")
+							label.aa(for="1") Available
+							input(type="radio" name="status" id="0" value="0")
+							label.aa(for="0") Unavailable
 						p
 							input(type="submit" name="add")

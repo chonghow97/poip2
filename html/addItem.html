@@ -21,7 +21,7 @@
         <ul>
           <li>
             <?php 
-            	echo "hello";
+            	echo strtoupper($_SESSION['loginUsername']).".";
             ?><span>▼</span>
             <ul>
               <li><a href="#">Account</a></li>
@@ -84,10 +84,10 @@
             </p>
             <p>
               <label>Status</label>
-              <select name="status">
-                <option value="true">Available</option>
-                <option value="false">Unavailable</option>
-              </select>
+              <input type="radio" name="status" id="1" value="1">
+              <label for="1" class="aa">Available</label>
+              <input type="radio" name="status" id="0" value="0">
+              <label for="0" class="aa">Unavailable</label>
             </p>
             <p>
               <input type="submit" name="add">

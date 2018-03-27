@@ -443,27 +443,23 @@ body#index {
       border-radius: 50%;
       height: 2rem; }
   #adminpanel ul {
-    list-style: none; }
-    #adminpanel ul li {
+    list-style: none;
+    line-height: 3rem;
+    color: white;
+    z-index: 2; }
+    #adminpanel ul li a {
       color: white;
-      font-weight: bold;
-      line-height: 3rem; }
-      #adminpanel ul li:hover ul {
-        background: #515763;
-        display: block; }
-      #adminpanel ul li span {
-        padding-left: .6rem;
-        font-size: 10px; }
-      #adminpanel ul li ul {
-        display: none;
-        margin: 0; }
-        #adminpanel ul li ul li:hover {
-          background: #68707f; }
-        #adminpanel ul li ul li a {
-          text-decoration: none;
-          color: white;
-          padding: 0 1rem;
-          box-sizing: border-box; }
+      justify-content: flex-end;
+      margin-right: 1rem; }
+    #adminpanel ul li:hover ul {
+      display: block; }
+    #adminpanel ul li ul {
+      display: none;
+      background: rgba(81, 87, 99, 0.8); }
+      #adminpanel ul li ul li:hover {
+        background: rgba(130, 137, 152, 0.8); }
+    #adminpanel ul li span {
+      padding: 0 .3rem 0 .3rem; }
 
 #sidebar {
   height: calc(100vh - 3rem);
@@ -533,10 +529,16 @@ body#index {
       box-sizing: border-box; }
     #form_container form p {
       padding-bottom: 1rem; }
+      #form_container form p input[type="radio"] {
+        position: absolute;
+        opacity: 0; }
       #form_container form p label {
         display: inline-block;
         width: 11rem;
         font-weight: bold; }
+        #form_container form p label.aa {
+          width: 6rem;
+          font-weight: normal; }
       #form_container form p input[type="submit"] {
         position: absolute;
         right: 2rem;
