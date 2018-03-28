@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add Item</title>
+    <title>Stock</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -56,45 +56,41 @@
       </div>
       <div id="container1">
         <div id="title">
-          <h3>Item</h3>
+          <h3>Stock Up</h3>
         </div>
-        <div id="form_container">
-          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
-            <p>
-              <label>Item Name</label>
-              <input type="text" name="name">
-            </p>
-            <p>
-              <label>Category</label>
-              <select name="category">
-                <?php 
-                	while($row = mysqli_fetch_assoc($result)){
-                		echo "<option value='".$row['cid']."'>".$row['cname']."</option>";
-                	}
-                 ?>
-              </select>
-            </p>
-            <p>
-              <label>Unit of measurement</label>
-              <select name="measure">
-                <?php 
-                	while($row1 = mysqli_fetch_assoc($result1)){
-                		echo "<option value='".$row1['mid']."'>".$row1['mname']."</option>";
-                	}
-                 ?>
-              </select>
-            </p>
-            <p>
-              <label>Status</label>
-              <input type="radio" name="status" id="1" value="1">
-              <label for="1" class="aa">Available</label>
-              <input type="radio" name="status" id="0" value="0">
-              <label for="0" class="aa">Unavailable</label>
-            </p>
-            <p>
-              <input type="submit" name="add">
-            </p>
-          </form>
+        <div id="container-z">
+          <div id="form_container">
+            <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+              <p>
+                <label>Item Name</label>
+                <select>
+                  <option>Please</option>
+                  <option>Linking</option>
+                  <option>To</option>
+                  <option>Item Name</option>
+                </select>
+              </p>
+              <p>
+                <label>Quanity</label>
+                <input type="number" min="1">
+              </p>
+              <p>
+                <label>Expiry date</label>
+                <input type="date">
+              </p>
+              <p>
+                <label>Type of stock</label>
+                <select>
+                  <option>Urgent request</option>
+                  <option>Monthly request</option>
+                  <option>Low quantity request</option>
+                </select>
+              </p>
+              <p>
+                <input type="submit" name="add">
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>

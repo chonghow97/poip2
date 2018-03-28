@@ -1,0 +1,37 @@
+doctype html
+html
+	head
+		- var title = "Stock"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Stock Up
+				#container-z
+					#form_container
+						form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
+							p
+								label Item Name
+								select
+									option Please
+									option Linking
+									option To
+									option Item Name
+
+							p
+								label Quanity
+								input(type="number",min="1")
+							p
+								label Expiry date
+								input(type="date")
+							p
+								label Type of stock
+								select
+									option Urgent request
+									option Monthly request
+									option Low quantity request
+							p
+								input(type="submit" name="add")

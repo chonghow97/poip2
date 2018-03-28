@@ -529,9 +529,6 @@ body#index {
       box-sizing: border-box; }
     #form_container form p {
       padding-bottom: 1rem; }
-      #form_container form p input[type="radio"] {
-        position: absolute;
-        opacity: 0; }
       #form_container form p label {
         display: inline-block;
         width: 11rem;
