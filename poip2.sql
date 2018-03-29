@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2018 at 06:15 AM
+-- Generation Time: Mar 29, 2018 at 05:22 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -41,7 +41,8 @@ INSERT INTO `category` (`cid`, `cname`) VALUES
 (1, 'Apparatus'),
 (2, 'Consumable'),
 (3, 'Equipment'),
-(4, 'Reagent');
+(4, 'Reagent'),
+(5, 'exampl');
 
 -- --------------------------------------------------------
 
@@ -95,16 +96,18 @@ CREATE TABLE `user` (
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
   `role` int(11) NOT NULL,
-  `firstlogin` tinyint(1) NOT NULL
+  `firstlogin` tinyint(1) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `lastlogin` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`uid`, `fname`, `password`, `email`, `role`, `firstlogin`) VALUES
-(1, 'Admin', '$2y$10$wwcG1xWc7F1cV8orrKU0y.J.IJ64S9gCFg7o8tVZmoH3Ynrm07M3q', 'Admin', 0, 1),
-(2, 'user', '$2y$10$XpnnpIztdBIEAE.dOViej.JeRhNENPIw2XVDtlEWjtNEcx3J4YJt2', 'user', 1, 0);
+INSERT INTO `user` (`uid`, `fname`, `password`, `email`, `role`, `firstlogin`, `created`, `lastlogin`) VALUES
+(1, 'Admin', '$2y$10$wwcG1xWc7F1cV8orrKU0y.J.IJ64S9gCFg7o8tVZmoH3Ynrm07M3q', 'Admin', 0, 1, '2018-03-27 13:22:40', '0000-00-00 00:00:00'),
+(2, 'user', '$2y$10$XpnnpIztdBIEAE.dOViej.JeRhNENPIw2XVDtlEWjtNEcx3J4YJt2', 'user', 1, 0, '2018-03-27 13:22:40', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -142,13 +145,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `iid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `iid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `measure`
