@@ -13,10 +13,10 @@
 		img.icon(src="./asset/image/admin.png")
 		ul
 			li
-				|<?php 
-				|	echo strtoupper($_SESSION['loginUsername']).".";
+				|<?php //
+				|	echo strtoupper($_SESSION['loginUsername']);
 				| ?>
 				span ▼
 				ul
-					li: a(href="#") Account
-					li: a(href="index.php?function") Leave
+					li: a(href="manage.php") Account
+					li: a(href="index.php") Leave

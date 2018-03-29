@@ -11,12 +11,12 @@
   <div id="adminpanel"><img src="./asset/image/bell.svg"/><img src="./asset/image/admin.png" class="icon"/>
     <ul>
       <li>
-        <?php 
-        	echo strtoupper($_SESSION['loginUsername']).".";
+        <?php //
+        	echo strtoupper($_SESSION['loginUsername']);
         ?><span>▼</span>
         <ul>
-          <li><a href="#">Account</a></li>
-          <li><a href="index.php?function">Leave</a></li>
+          <li><a href="manage.php">Account</a></li>
+          <li><a href="index.php">Leave</a></li>
         </ul>
       </li>
     </ul>
