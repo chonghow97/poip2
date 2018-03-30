@@ -675,3 +675,41 @@ body#index {
 #container-panel {
   background: white;
   flex: 1; }
+  #container-panel #title {
+    width: 90%;
+    margin: 0 auto; }
+  #container-panel h2 {
+    color: #3FA9F3;
+    padding: 2rem .7rem;
+    border-bottom: 1px solid #707070; }
+
+#manage-content h4 {
+  width: 90%;
+  margin: 2rem auto; }
+
+#manage-panel {
+  width: 80%;
+  margin: 1rem auto; }
+  #manage-panel p {
+    color: #8C8C8C;
+    font-weight: normal; }
+  #manage-panel input {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 10px 20px;
+    color: #949494;
+    border: 1px solid #707070;
+    border-radius: 4px; }
+    #manage-panel input:focus {
+      outline: none; }
+    #manage-panel input[type="submit"] {
+      border: none;
+      text-align: center;
+      margin: 0 auto;
+      width: 106%;
+      background: #3FA9F3;
+      color: white;
+      font-weight: bold;
+      cursor: pointer; }
+      #manage-panel input[type="submit"]:hover {
+        background: #4daff4; }
