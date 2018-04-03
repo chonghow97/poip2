@@ -62,7 +62,7 @@
           <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             <p>
               <label>Item Name</label>
-              <input type="text" name="name">
+              <input type="text" name="name" required>
             </p>
             <p>
               <label>Category</label>
@@ -86,7 +86,7 @@
             </p>
             <p>
               <label>Status</label>
-              <input type="radio" name="status" id="1" value="1">
+              <input type="radio" name="status" id="1" value="1" checked required>
               <label for="1" class="aa">Available</label>
               <input type="radio" name="status" id="0" value="0">
               <label for="0" class="aa">Unavailable</label>

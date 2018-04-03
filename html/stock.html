@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -63,28 +64,21 @@
             <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
               <p>
                 <label>Item Name</label>
-                <select>
-                  <option>Please</option>
-                  <option>Linking</option>
-                  <option>To</option>
-                  <option>Item Name</option>
+                <select name="item">
+                    <?php 
+                    foreach($user as $u => $v){
+                    echo "<option value='".$user[$u][iid]."'>".$user[$u][iname]."</option>";
+                  }
+                 ?>
                 </select>
               </p>
               <p>
-                <label>Quanity</label>
-                <input type="number" min="1">
+                <label>Quantity</label>
+                <input type="number" min="1" name="quantity">
               </p>
               <p>
                 <label>Expiry date</label>
-                <input type="date">
-              </p>
-              <p>
-                <label>Type of stock</label>
-                <select>
-                  <option>Urgent request</option>
-                  <option>Monthly request</option>
-                  <option>Low quantity request</option>
-                </select>
+                <input type="date" name="exp">
               </p>
               <p>
                 <input type="submit" name="add">
