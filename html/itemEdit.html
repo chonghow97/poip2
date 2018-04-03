@@ -61,35 +61,37 @@
         <div id="container2">
           <div id="filter">
             <form action="itemEdit.php" method="post">
-            <p>
-              <label>Category:</label>
-              <?php 
-                while($row = mysqli_fetch_assoc($result)){
-                  echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
-              }
-              ?>
-            </p>
-            <p>
-              <label>Brand:</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </p>
-            <p>
-              <label>Status:</label>
-              <label>
-                <input type="radio" name="status">Available
-              </label>
-              <label>
-                <input type="radio" name="status">Unavailable
-              </label>
-            </p>
-            <input type="text">
-            <input type="submit" name="add" value="Search">
-          </form>
+              <p>
+                <label>
+                  Category:
+                  <?php 
+                   while($row = mysqli_fetch_assoc($result)){
+                     echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+                  }
+                  ?>
+                </label>
+              </p>
+              <p>
+                <label>Brand:</label>
+                <select>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </p>
+              <p>
+                <label>Status:</label>
+                <label>
+                  <input type="radio" name="status">Available
+                </label>
+                <label>
+                  <input type="radio" name="status">Unavailable
+                </label>
+              </p>
+              <input type="text">
+              <input type="submit" name="add" value="Search">
+            </form>
           </div>
           <table>
             <tr>

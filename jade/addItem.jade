@@ -14,7 +14,7 @@ html
 					form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
 						p
 							label Item Name
-							input(type="text" name="name")
+							input(type="text" name="name" required)
 
 						p
 							label Category
@@ -36,7 +36,7 @@ html
 							label Status
 							input(type="radio" name="status" id="1" value="1")
 							label.aa(for="1") Available
-							input(type="radio" name="status" id="0" value="0")
+							input(type="radio" name="status" id="0" value="0" checked)
 							label.aa(for="0") Unavailable
 						p
 							input(type="submit" name="add")

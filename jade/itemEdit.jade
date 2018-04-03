@@ -12,27 +12,29 @@ html
 					h3 Edit
 				#container2
 					#filter
-						p
-							label Category:
-							for a in ["Apparatus","Consumable","Equipment","Reagent"]
-								label
-									input(type="radio" name="category")
-									|#{a}
+						form(action="itemEdit.php" method="post")
+							p
+								label Category:
+									|<?php 
+									|  while($row = mysqli_fetch_assoc($result)){
+									|    echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+									|}
+									|?>
 
-						p
-							label Brand:
-							select: for b in [1,2,3,4]
-								option= b
-						p
-							label Status:
-							label
-								input(type="radio" name="status")
-								|Available
-							label
-								input(type="radio" name="status")
-								|Unavailable
-						input(type="text")
-						input(type="submit" value="Search")
+							p
+								label Brand:
+								select: for b in [1,2,3,4]
+									option= b
+							p
+								label Status:
+								label
+									input(type="radio" name="status")
+									|Available
+								label
+									input(type="radio" name="status")
+									|Unavailable
+							input(type="text")
+							input(type="submit" name="add" value="Search")
 					table
 						tr
 							for a in ["Item Name","Catergory","Brand","Expire Date","Status","Action"]

@@ -15,23 +15,18 @@ html
 						form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
 							p
 								label Item Name
-								select
-									option Please
-									option Linking
-									option To
-									option Item Name
+								select(name="item").
+									<?php 
+										foreach($user as $u => $v){
+											echo "<option value='".$user[$u][iid]."'>".$user[$u][iname]."</option>";
+										}
+									?>
 
 							p
-								label Quanity
-								input(type="number",min="1")
+								label Quantity
+								input(type="number" min="1" name="quantity")
 							p
 								label Expiry date
 								input(type="date")
-							p
-								label Type of stock
-								select
-									option Urgent request
-									option Monthly request
-									option Low quantity request
 							p
 								input(type="submit" name="add")
