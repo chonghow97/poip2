@@ -60,20 +60,14 @@
         </div>
         <div id="container2">
           <div id="filter">
+            <form action="itemEdit.php" method="post">
             <p>
               <label>Category:</label>
-              <label>
-                <input type="radio" name="category">Apparatus
-              </label>
-              <label>
-                <input type="radio" name="category">Consumable
-              </label>
-              <label>
-                <input type="radio" name="category">Equipment
-              </label>
-              <label>
-                <input type="radio" name="category">Reagent
-              </label>
+              <?php 
+                while($row = mysqli_fetch_assoc($result)){
+                  echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+              }
+              ?>
             </p>
             <p>
               <label>Brand:</label>
@@ -94,7 +88,8 @@
               </label>
             </p>
             <input type="text">
-            <input type="submit" value="Search">
+            <input type="submit" name="add" value="Search">
+          </form>
           </div>
           <table>
             <tr>

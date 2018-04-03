@@ -13,7 +13,6 @@
 			$query1 = "INSERT INTO item VALUES(null,'$item','$category','$measure','$status')";
 			if($itemresult = mysqli_query($link,$query1)){
 				echo "<script>alert('added Successfully');</script>";
-				$_POST = array();
 			}else{
 				echo mysqli_error($link);
 			}

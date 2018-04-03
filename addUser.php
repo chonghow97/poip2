@@ -10,7 +10,7 @@
 		if($result=mysqli_query($link,$sql)){
 			echo "<script>alert('Added Successfully')</script>";
 		}else{
-			echo "<script>alert('Failed')</script>";
+			echo "<script>alert('Invalid Name or Email')</script>";
 		}
 	}
 	
