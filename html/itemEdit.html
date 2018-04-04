@@ -65,11 +65,11 @@
               <label>Category:</label>
               <?php 
                 while($row = mysqli_fetch_assoc($result)){
-                  echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+                  echo"<label><input type='radio' name='category' required value='".$row['cid']."'>".$row['cname']."</label>";
               }
               ?>
             </p>
-            <p>
+            <!-- <p>
               <label>Brand:</label>
               <select>
                 <option>1</option>
@@ -77,17 +77,17 @@
                 <option>3</option>
                 <option>4</option>
               </select>
-            </p>
+            </p> -->
             <p>
               <label>Status:</label>
               <label>
-                <input type="radio" name="status">Available
+                <input type="radio" name="status" value="1" checked required>Available
               </label>
               <label>
-                <input type="radio" name="status">Unavailable
+                <input type="radio" name="status" value="0">Unavailable
               </label>
             </p>
-            <input type="text">
+            <input type="text" name ="item">
             <input type="submit" name="add" value="Search">
           </form>
           </div>
@@ -95,131 +95,40 @@
             <tr>
               <th>Item Name</th>
               <th>Catergory</th>
-              <th>Brand</th>
               <th>Expire Date</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
+              <?php 
+              if(isset($_POST['add'])){
+                while($row = mysqli_fetch_assoc($result2)){
+                  (($row['status'])? $statusName="Available":$statusName="Unavailable");
+                  echo "<tr><td>".$row['iname']."</td><td>".$row['cname']."</td><td>".$row['expire']."</td><td>".$statusName."</td><td><img src='./asset/image/table-edit.svg' class='editIcon'><img src='./asset/image/x.svg' class='delIcon'></td></tr>";
+              }
+              }
+              ?>
+              
+              <script type="text/javascript">
+                var editIcon = document.querySelector(".editIcon");
+                var delIcon = document.querySelector(".delIcon");
+                editIcon.addEventListener("click", edit);
+                delIcon.addEventListener("click", del);
+
+                function edit(){
+                  alert("HAHA");
+                }
+
+                function del(){
+                  sureDel = confirm("Delete this item ?");
+                  if (sureDel == false){
+                    return;
+                  } 
+                  var div = this.parentElement;
+                  var div2 = div.parentElement;
+                  div2.outerHTML = "";
+                }
+
+              </script>
           </table>
         </div>
       </div>

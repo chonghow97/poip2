@@ -713,3 +713,8 @@ body#index {
       cursor: pointer; }
       #manage-panel input[type="submit"]:hover {
         background: #4daff4; }
+
+.editIcon, .delIcon{
+	cursor: pointer;
+}
+	

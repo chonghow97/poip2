@@ -60,17 +60,18 @@
         </div>
         <div id="container2">
           <div id="filter">
+            <form action="userEdit.php" method="post">
             <p>
-              <label>Category:</label>
+              <label>Role:</label>
               <label>
-                <input type="radio" name="category">Admin
+                <input type="radio" name="role" value="0" checked required>Admin
               </label>
               <label>
-                <input type="radio" name="category">User
+                <input type="radio" name="role" value="1">User
               </label>
             </p>
-            <input type="text">
-            <input type="submit" value="Search">
+            <input type="text" name="fname">
+            <input type="submit" name="searchUser" value="Search">
           </div>
           <table>
             <tr>
@@ -80,112 +81,18 @@
               <th>Date created</th>
               <th>Action</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
+
+            <?php 
+              if(isset($_POST['searchUser'])){
+                while($row = mysqli_fetch_assoc($result2)){
+                  (($row['role'])? $roleName="User":$roleName="Admin");
+                  echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><img src='./asset/image/table-edit.svg' class='editIcon'><img src='./asset/image/x.svg' class='delIcon'></td></tr>";
+              }
+              }
+            ?>
+
           </table>
+        </form>
         </div>
       </div>
     </div>
