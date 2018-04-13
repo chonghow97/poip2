@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add User</title>
+    <title>Request Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -18,8 +18,8 @@
         <ul>
           <li>User<span>▼</span>
             <ul>
-              <li><a href="#">Account</a></li>
-              <li><a href="index.php">Leave</a></li>
+              <li><a href="manage.php">Account</a></li>
+              <li><a href="logout.php">Leave</a></li>
             </ul>
           </li>
         </ul>
@@ -47,45 +47,34 @@
           <h3>Item</h3>
         </div>
         <div id="form_container">
-          <form>
+          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
             <p>
               <label>Item Name</label>
-              <select>
-                <option>Apparatus</option>
-                <option>Consumable</option>
-                <option>Equipment</option>
-                <option>Reagent</option>
-              </select>
-              <select>
-                <option>Apparatus</option>
-                <option>Consumable</option>
-                <option>Equipment</option>
-                <option>Reagent</option>
+              <select name="itemName">
+                <?php 
+                  while($row = mysqli_fetch_assoc($result)){
+                    echo "<option value='".$row['iid']."'>".$row['iname']."</option>";
+                  }
+                 ?>
               </select>
             </p>
             <p>
               <label>Quantity</label>
-              <select>
-                <option>Apparatus</option>
-                <option>Consumable</option>
-                <option>Equipment</option>
-                <option>Reagent</option>
-              </select>
-              <select>
-                <option>Apparatus</option>
-                <option>Consumable</option>
-                <option>Equipment</option>
-                <option>Reagent</option>
+              <input type="number" name="quantity" min="1" step="0.01">
+              <select name="measureUnit">
+                <?php 
+                  while($row = mysqli_fetch_assoc($result1)){
+                    echo "<option value='".$row['mid']."'>".$row['mname']."</option>";
+                  }
+                 ?>
               </select>
             </p>
             <p>
               <label>Purpose</label>
+              <input type="text" name="purpose">
             </p>
             <p>
-              <textarea></textarea>
-            </p>
-            <p>
-              <input type="submit">
+              <input type="submit" name="request" value="Request">
             </p>
           </form>
         </div>

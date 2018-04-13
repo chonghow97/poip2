@@ -1,4 +1,9 @@
 <?php
+	session_start();
+	if(!isset($_SESSION['islogin'])){
+		$_SESSION['kickOut'] = "kick";
+		header('Location:index.php');
+	} 
 	require_once 'conn.php';
 	if(isset($_POST['add'])){
 		$item = $_POST['item'];

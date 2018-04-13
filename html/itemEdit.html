@@ -25,7 +25,7 @@
             ?><span>▼</span>
             <ul>
               <li><a href="manage.php">Account</a></li>
-              <li><a href="index.php">Leave</a></li>
+              <li><a href="logout.php">Leave</a></li>
             </ul>
           </li>
         </ul>
@@ -65,29 +65,21 @@
               <label>Category:</label>
               <?php 
                 while($row = mysqli_fetch_assoc($result)){
-                  echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+                  echo"<label><input type='radio' name='category' required value='".$row['cid']."'>".$row['cname']."</label>";
               }
               ?>
             </p>
-            <p>
-              <label>Brand:</label>
-              <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </p>
+
             <p>
               <label>Status:</label>
               <label>
-                <input type="radio" name="status">Available
+                <input type="radio" name="status" value="1" checked required>Available
               </label>
               <label>
-                <input type="radio" name="status">Unavailable
+                <input type="radio" name="status" value="0">Unavailable
               </label>
             </p>
-            <input type="text">
+            <input type="text" name ="item">
             <input type="submit" name="add" value="Search">
           </form>
           </div>
@@ -95,131 +87,21 @@
             <tr>
               <th>Item Name</th>
               <th>Catergory</th>
-              <th>Brand</th>
+              <th>Quantity</th>
               <th>Expire Date</th>
               <th>Status</th>
               <th>Action</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>2</td>
-              <td>3</td>
-              <td>4</td>
-              <td>5</td>
-              <td><img src="./asset/image/table-edit.svg"><img src="./asset/image/x.svg"></td>
-            </tr>
+              <?php 
+              if(isset($_POST['add'])){
+                while($row = mysqli_fetch_assoc($result2)){
+                  (($row['status'])? $statusName="Available":$statusName="Unavailable");
+                  echo "<tr><td>".$row['iname']."</td><td>".$row['cname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['expire']."</td><td>".$statusName."</td><td><a href='itemedit2.php?id=".$row['iid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='itemEdit.php?id=".$row['iid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
+              }
+              }
+              ?>
+              
+              
           </table>
         </div>
       </div>
