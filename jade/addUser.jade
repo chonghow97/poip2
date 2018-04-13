@@ -14,10 +14,10 @@ html
 					form(method="post" action!="<?php echo $_SERVER['PHP_SELF'] ?>")
 						p
 							label Full Name
-							input(type="text" name="fname")
+							input(type="text" name="fname" required)
 						p
 							label Email
-							input(type="email" name="email")
+							input(type="email" name="email" required)
 						p
 							label Role
 							select(name="role")
