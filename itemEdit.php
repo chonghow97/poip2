@@ -8,29 +8,20 @@
 	require_once 'conn.php';
 	$sql = "SELECT * FROM category";
 	$result = mysqli_query($link,$sql);
-
-	if(isset($_POST['add'])){
-		$category = $_POST['category'];
-		$status = $_POST['status'];
-		$item = $_POST['item'];
-		$sql2 = "SELECT * 
-				FROM item 
-				JOIN stock ON item.iid = stock.iid
-				JOIN category ON item.cid = category.cid
-				JOIN measure ON item.mid = measure.mid
-				WHERE iname LIKE '%$item%' AND item.cid='$category' AND status='$status';";
+		$sql2 = "SELECT i.iname,c.cname,m.mname,i.status,i.iid FROM item as i,`measure` as m,`category` as c where i.cid = c.cid AND i.mid = m.mid";
 		$result2 = mysqli_query($link,$sql2);
-	}
+		$row2 = mysqli_fetch_all($result2);
+		function ggwp(){
+			echo "hello";
+		}
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];
-		$sql3 = "DELETE FROM item WHERE iid='$id';";
-		$sql4 = "DELETE FROM stock WHERE iid='$id';";
-		if($itemresult1 = mysqli_query($link,$sql3)&&$itemresult2 = mysqli_query($link,$sql4)){
-			echo "<script>alert('Item has been removed');</script>";
-			header("Location: itemEdit.php");
-		}else{
-			echo mysqli_error($link);
+		$sql3 = "DELETE FROM `item` WHERE `item`.`iid` = '$id'";
+		if($result3 = mysqli_query($link,$sql3)){
+			echo "<script>alert('data has been deleted');
+				window.location='itemEdit.php';
+			</script>";
 		}
 	}
 

@@ -95,18 +95,30 @@
 										<th>Action</th>
 									</tr>
 									<?php 
-									if(isset($_POST['add'])){
-									while($row = mysqli_fetch_assoc($result2)){
-									(($row['status'])? $statusName="Available":$statusName="Unavailable");
-									echo "<tr><td>".$row['iname']."</td><td>".$row['cname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['expire']."</td><td>".$statusName."</td><td><a href='itemedit2.php?id=".$row['iid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='itemEdit.php?id=".$row['iid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
-								}
+										if(!empty($row2)){
+										print_r($row2);
+										foreach($row2 as $r){
+										echo "<tr>
+											<td>$r[0]</td>
+											<td>$r[1]</td>
+											<td>$r[2]</td>
+											<td>$r[3]</td>
+											<td>
+												<a href='#'><img src='./asset/image/edit.svg'></a>
+												<a href='itemedit.php?id=$r[4]'><img src='./asset/image/x.svg'></a>
+											</td>
+										</tr>";
+									}
+								}else{
+								echo "<tr><td colspan='5' style='background: #fff'>No result Found</td></tr>";
 							}
-							?>
+
+									?>
 
 
-						</table>
+								</table>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
-		</body>
-		</html>
+				</body>
+				</html>
