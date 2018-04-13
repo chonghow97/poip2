@@ -1,10 +1,9 @@
 <?php
-<<<<<<< HEAD
-	session_start();
-	if(!isset($_SESSION['islogin'])){
-		$_SESSION['kickOut'] = "kick";
-		header('Location:index.php');
-	} 
+session_start();
+if(!isset($_SESSION['islogin'])){
+	$_SESSION['kickOut'] = "kick";
+	header('Location:index.php');
+} 
 
 echo "<body></body>";
 require_once 'conn.php';
@@ -31,8 +30,8 @@ if(isset($_POST['add'])){
 
 		try{
 				// $mail->SMTPDebug = 2; //not nessasary .. use to find our bug
-				$mail->Host = "smtp.gmail.com";
-				$mail->Port = 587;
+			$mail->Host = "smtp.gmail.com";
+			$mail->Port = 587;
 				$mail->SMTPSecure = "tls"; //Enable TLS encryption
 				$mail->IsSMTP();
 				$mail->SMTPAuth = true;
@@ -84,23 +83,22 @@ if(isset($_POST['add'])){
 
 		else{
 			echo "<script>alert('Email has been registered before')</script>";
-			
-=======
-	echo "<body></body>";
-	require_once 'conn.php';
-	if(isset($_POST['add'])){
-		$fullname = $_POST['fname'];
-		$password = password_hash('abc123',PASSWORD_DEFAULT);
-		$email = $_POST['email'];
-		$role = $_POST['role'];
-		$sql = "INSERT INTO user VALUES(null,'$fullname','$password','$email','$role',false,NOW(),0)";
-		if($result=mysqli_query($link,$sql)){
-			echo "<script>alert('Added Successfully')</script>";
-		}else{
-			echo "<script>alert('mysqli_error($link)')</script>";
->>>>>>> 5131a1d3bf619b5b11061e50307c44174561b54b
+			echo "<body></body>";
+			require_once 'conn.php';
+			if(isset($_POST['add'])){
+				$fullname = $_POST['fname'];
+				$password = password_hash('abc123',PASSWORD_DEFAULT);
+				$email = $_POST['email'];
+				$role = $_POST['role'];
+				$sql = "INSERT INTO user VALUES(null,'$fullname','$password','$email','$role',false,NOW(),0)";
+				if($result=mysqli_query($link,$sql)){
+					echo "<script>alert('Added Successfully')</script>";
+				}else{
+					echo "<script>alert('mysqli_error($link)')</script>";
+				}
+			}
 		}
 	}
-
 	require './html/addUser.html';
+
 	?>

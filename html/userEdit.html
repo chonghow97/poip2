@@ -8,9 +8,6 @@
     <link rel="icon" href="../asset/image/icon.png">
   </head>
   <body id="admin">
-    <?php 
-    	session_start();
-    ?>
     <div id="header"><a href="index.php"><img src="./asset/image/favicon.svg">
         <div id="slogan">
           <h3>Inventory</h3>
@@ -20,7 +17,7 @@
       <div id="adminpanel"><img src="./asset/image/bell.svg"><img src="./asset/image/admin.png" class="icon">
         <ul>
           <li>
-            <?php //
+            <?php
             	echo strtoupper($_SESSION['loginUsername']);
             ?><span>▼</span>
             <ul>
