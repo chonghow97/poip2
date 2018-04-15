@@ -8,7 +8,6 @@
     <link rel="icon" href="../asset/image/icon.png">
   </head>
   <body id="admin">
-
     <div id="header"><a href="index.php"><img src="./asset/image/favicon.svg">
         <div id="slogan">
           <h3>Inventory</h3>
@@ -18,7 +17,7 @@
       <div id="adminpanel"><img src="./asset/image/bell.svg"><img src="./asset/image/admin.png" class="icon">
         <ul>
           <li>
-            <?php //
+            <?php
             	echo strtoupper($_SESSION['loginUsername']);
             ?><span>▼</span>
             <ul>
@@ -61,9 +60,7 @@
             <h3>Requested Stock</h3>
             <h3 class="number">
               <?php 
-              	while($row = mysqli_fetch_assoc($result)){
-                  echo $row['requestNo'];
-              }
+              	echo "0";
               ?>
             </h3>
           </div>
@@ -71,9 +68,7 @@
             <h3>Stock Expired</h3>
             <h3 class="number">
               <?php 
-                while($row = mysqli_fetch_assoc($result1)){
-                  echo $row['expiredItem'];
-              }
+              	echo "0";
               ?>
             </h3>
           </div>

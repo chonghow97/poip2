@@ -15,20 +15,17 @@ html
 						form(action="itemEdit.php" method="post")
 							p
 								label Category:
-									|<?php 
-									|  while($row = mysqli_fetch_assoc($result)){
-									|    echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
-									|}
-									|?>
-
-							p
-								label Brand:
-								select: for b in [1,2,3,4]
-									option= b
+								|<?php 
+								|	$row = mysqli_fetch_assoc($result);
+								|	echo"<label><input type='radio' name='category' checked value='".$row['cid']."'>".$row['cname']."</label>";
+								|	while($row = mysqli_fetch_assoc($result)){
+								|	echo"<label><input type='radio' name='category' value='".$row['cid']."'>".$row['cname']."</label>";
+								|	}
+								|?>
 							p
 								label Status:
 								label
-									input(type="radio" name="status")
+									input(type="radio" name="status" checked)
 									|Available
 								label
 									input(type="radio" name="status")
@@ -37,12 +34,24 @@ html
 							input(type="submit" name="add" value="Search")
 					table
 						tr
-							for a in ["Item Name","Catergory","Brand","Expire Date","Status","Action"]
+							for a in ["Item Name","Catergory","Unit of measurement","Status","Action"]
 								th= a
-						for tr in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-							tr
-								for b in [1,2,3,4,5]
-									td= b
-								td
-									img(src="./asset/image/table-edit.svg")
-									img(src="./asset/image/x.svg")
+						| <?php 
+						|	if(!empty($row2)){
+						|	print_r($row2);
+						|	foreach($row2 as $r){
+						|	echo "<tr>
+						|	<td>$r[0]</td>
+						|	<td>$r[1]</td>
+						|	<td>$r[2]</td>
+						|	<td>$r[3]</td>
+						|	<td>
+						|	<a href='#'><img src='./asset/image/edit.svg'></a>
+						|	<a href='itemedit.php?id=$r[4]'><img src='./asset/image/x.svg'></a>
+						|	</td>
+						|	</tr>";
+						|	}
+						|	}else{
+						|	echo "<tr><td colspan='5' style='background: #fff'>No result Found</td></tr>";
+						|	}
+						|?>

@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var title = "Edit Item"
+		- var title = "Edit User"
 		include _header
 	body#admin
 		include header
@@ -12,22 +12,25 @@ html
 					h3 Edit
 				#container2
 					#filter
-						p
-							label Category:
-							for a in ["Admin","User"]
+						form(action="userEdit.php" method="post")
+							p
+								label Role:
 								label
-									input(type="radio" name="category")
-									|#{a}
-						input(type="text")
-						input(type="submit" value="Search")
+									input( type="radio" name="role" value="0" checked) 
+									|Admin
+								label
+									input( type="radio" name="role" value="1") 
+									|User
+							input(type="text" name="fname")
+							input(type="submit" name="searchUser" value="Search")
 					table
-						tr
-							for a in ["Full Name","Email","Role","Date created","Action"]
-								th= a
-						for tr in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-							tr
-								for b in [1,2,3,4]
-									td= b
-								td
-									img(src="./asset/image/table-edit.svg")
-									img(src="./asset/image/x.svg")
+						tr: for th in["Full Name","Email","Role","Date created","Action"]
+							th=th
+						|<?php 
+						|  if(isset($_POST['searchUser'])){
+						|    while($row = mysqli_fetch_assoc($result2)){
+						|      (($row['role'])? $roleName="User":$roleName="Admin");
+						|      echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='".$_SERVER['REQUEST_URI']."&action=edit&iid=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
+						|  	}
+						|  }
+						|?>

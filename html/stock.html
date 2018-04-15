@@ -17,7 +17,7 @@
       <div id="adminpanel"><img src="./asset/image/bell.svg"><img src="./asset/image/admin.png" class="icon">
         <ul>
           <li>
-            <?php //
+            <?php
             	echo strtoupper($_SESSION['loginUsername']);
             ?><span>▼</span>
             <ul>
@@ -75,7 +75,7 @@
               </p>
               <p>
                 <label>Expiry date</label>
-                <input type="date">
+                <input type="date" name="exp">
               </p>
               <p>
                 <input type="submit" name="add">

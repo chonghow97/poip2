@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Edit Item</title>
+    <title>Edit User</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -58,17 +58,18 @@
         <div id="container2">
           <div id="filter">
             <form action="userEdit.php" method="post">
-            <p>
-              <label>Role:</label>
-              <label>
-                <input type="radio" name="role" value="0" checked required>Admin
-              </label>
-              <label>
-                <input type="radio" name="role" value="1">User
-              </label>
-            </p>
-            <input type="text" name="fname">
-            <input type="submit" name="searchUser" value="Search">
+              <p>
+                <label>Role:</label>
+                <label>
+                  <input type="radio" name="role" value="0" checked>Admin
+                </label>
+                <label>
+                  <input type="radio" name="role" value="1">User
+                </label>
+              </p>
+              <input type="text" name="fname">
+              <input type="submit" name="searchUser" value="Search">
+            </form>
           </div>
           <table>
             <tr>
@@ -77,19 +78,15 @@
               <th>Role</th>
               <th>Date created</th>
               <th>Action</th>
-            </tr>
-
-            <?php 
-              if(isset($_POST['searchUser'])){
-                while($row = mysqli_fetch_assoc($result2)){
-                  (($row['role'])? $roleName="User":$roleName="Admin");
-                  echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='".$_SERVER['REQUEST_URI']."&action=edit&iid=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
-              }
-              }
+            </tr><?php 
+             if(isset($_POST['searchUser'])){
+               while($row = mysqli_fetch_assoc($result2)){
+                 (($row['role'])? $roleName="User":$roleName="Admin");
+                 echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='".$_SERVER['REQUEST_URI']."&action=edit&iid=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
+             	}
+             }
             ?>
-
           </table>
-        </form>
         </div>
       </div>
     </div>
