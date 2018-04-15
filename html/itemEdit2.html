@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Item</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="icon" href="../asset/image/icon.png">
+  </head>
+  <body id="admin">
+    <div id="header"><a href="logout.php"><img src="./asset/image/favicon.svg">
+        <div id="slogan">
+          <h3>Inventory</h3>
+          <h6>Secure your database</h6>
+        </div></a>
+      <div id="center"></div>
+      <div id="adminpanel"><img src="./asset/image/bell.svg"><img src="./asset/image/admin.png" class="icon">
+        <ul>
+          <li>
+            <?php
+            	echo strtoupper($_SESSION['loginUsername']);
+            ?><span>▼</span>
+            <ul>
+              <li><a href="manage.php">Account</a></li>
+              <li><a href="logout.php">Leave</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="container">
+      <div id="sidebar">
+        <ul>
+          <li><a href="dashboard.php"><img src="./asset/image/dashboard.svg">
+              <p>Dashboard</p></a></li>
+          <li><img src="./asset/image/favicon.svg">
+            <p>Item</p>
+          </li>
+          <li><a href="addItem.php"><img src="./asset/image/add.svg">
+              <p>Add</p></a></li>
+          <li><a href="itemEdit.php"><img src="./asset/image/edit.svg">
+              <p>Edit</p></a></li>
+          <li><img src="./asset/image/stock.svg">
+            <p>Stock</p>
+          </li>
+          <li><a href="stock.php"><img src="./asset/image/add.svg">
+              <p>Add</p></a></li>
+          <li class="item"><a href="stockEdit.php"><img src="./asset/image/edit.svg">
+              <p>Edit</p></a></li>
+          <li><img src="./asset/image/user.svg">
+            <p>User</p>
+          </li>
+          <li class="item"><a href="addUser.php"><img src="./asset/image/add.svg">
+              <p>Add</p></a></li>
+          <li class="item"><a href="userEdit.php"><img src="./asset/image/edit.svg">
+              <p>Edit</p></a></li>
+        </ul>
+      </div>
+      <div id="container1">
+        <div id="title">
+          <h3>Edit</h3>
+        </div>
+        <div id="form_container">
+          <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+            <p>
+              <label>Item Name</label>
+              <input type="text" name="item" value="<?php echo $item[0]; ?>">
+            </p>
+            <p>
+              <label>Catergory</label>
+              <select name="cat">
+                <?php
+                	foreach ($cat as $c) {
+                		echo "<option value='$c[0]'>$c[1]</option>";
+                	}
+                	
+                ?>
+              </select>
+            </p>
+            <p>
+              <label>Unit of measurement</label>
+              <select name="mea">
+                <?php
+                	foreach ($mea as $m) {
+                		echo "<option value='$m[0]'>$m[1]</option>";
+                	}
+                ?>
+              </select>
+            </p>
+            <p>
+              <label>Status</label>
+              <label>
+                <input type="radio" name="status" value="1" checked>Available
+              </label>
+              <label>
+                <input type="radio" name="status" value="0">Unavailable
+              </label>
+            </p>
+            <p>
+              <input type="submit" name="update" value="Update">
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

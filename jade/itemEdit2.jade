@@ -1,0 +1,44 @@
+doctype html
+html
+	head
+		- var title = "Edit Item"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Edit
+				#form_container
+					form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
+						p
+							label Item Name
+							input(type="text" name="item" value!="<?php echo $item[0]; ?>")
+						p
+							label Catergory
+							select(name="cat").
+								<?php
+									foreach ($cat as $c) {
+										echo "<option value='$c[0]'>$c[1]</option>";
+									}
+									
+								?>
+						p
+							label Unit of measurement
+							select(name="mea").
+									<?php
+										foreach ($mea as $m) {
+											echo "<option value='$m[0]'>$m[1]</option>";
+										}
+									?>
+						p
+							label Status
+							label
+								input(type="radio" name="status" value="1" checked)
+								| Available
+							label
+								input(type="radio" name="status" value="0")
+								| Unavailable
+						p
+							input(type="submit" name="update" value="Update")

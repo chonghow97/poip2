@@ -11,8 +11,8 @@
 		$sql2 = "SELECT i.iname,c.cname,m.mname,i.status,i.iid FROM item as i,`measure` as m,`category` as c where i.cid = c.cid AND i.mid = m.mid";
 		$result2 = mysqli_query($link,$sql2);
 		$row2 = mysqli_fetch_all($result2);
-		function ggwp(){
-			echo "hello";
+		foreach ($row2 as $r2=>$l2) {
+			($l2[3])? ($row2[$r2][3] = "Available") : ($row2[$r2][3] = "Unavailable");
 		}
 
 	if(isset($_GET['id'])){

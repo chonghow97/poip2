@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		- var title = "Edit Item"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Edit
+				#form_container
+					form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
+						p
+							label Full Name
+							input(type="text" name="fname" value!="<?php echo $user[0]; ?>")
+						p
+							label Email
+							input(type="email" name="email" value!="<?php echo $user[1]; ?>")
+						p
+							label Role
+							label
+								input(type="radio" name="role" value="0" checked)
+								| Admin
+							label
+								input(type="radio" name="role" value="1")
+								| User
+						p
+							input(type="submit" name="update" value="Update")

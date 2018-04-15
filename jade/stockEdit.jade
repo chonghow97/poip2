@@ -1,0 +1,31 @@
+doctype html
+html
+	head
+		- var title = "Edit User"
+		include _header
+	body#admin
+		include header
+		#container
+			include sidebar
+			#container1
+				#title
+					h3 Edit
+				#container2
+					#filter(style="width: 50%")
+						form(action="userEdit.php" method="post")
+							p
+								label Stock Date:
+								input(type="date" style="margin-left: 3rem")
+							input(type="text" name="fname")
+							input(type="submit" name="searchUser" value="Search")
+					table
+						tr: for th in["Item name","Quantity","Expire Date","Action"]
+							th=th
+						|<?php 
+						|  if(isset($_POST['searchUser'])){
+						|    while($row = mysqli_fetch_assoc($result2)){
+						|      (($row['role'])? $roleName="User":$roleName="Admin");
+						|      echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='userEdit2.php?id=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a onclick='return confirm(".'"Are you sure want to delete?"'.")'href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
+						|  	}
+						|  }
+						|?>

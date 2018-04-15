@@ -22,8 +22,7 @@
 		$id = $_GET['id'];
 		$sql3 = "DELETE FROM user WHERE uid='$id';";
 		if($itemresult1 = mysqli_query($link,$sql3)){
-			echo "<script>alert('User has been removed');</script>";
-			header("Location: userEdit.php");
+			echo "<script>alert('User has been removed');location.assign(userEdit.php);</script>";
 		}else{
 			echo mysqli_error($link);
 		}

@@ -10,7 +10,7 @@ require_once 'conn.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require "../PHPMailer/vendor/autoload.php";
+require "./PHPMailer/vendor/autoload.php";
 $mail = new PHPMailer();
 
 if(isset($_POST['add'])){

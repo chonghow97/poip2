@@ -38,7 +38,6 @@ html
 								th= a
 						| <?php 
 						|	if(!empty($row2)){
-						|	print_r($row2);
 						|	foreach($row2 as $r){
 						|	echo "<tr>
 						|	<td>$r[0]</td>
@@ -46,8 +45,8 @@ html
 						|	<td>$r[2]</td>
 						|	<td>$r[3]</td>
 						|	<td>
-						|	<a href='#'><img src='./asset/image/edit.svg'></a>
-						|	<a href='itemedit.php?id=$r[4]'><img src='./asset/image/x.svg'></a>
+						|	<a href='itemedit2.php?id=$r[4]'><img src='./asset/image/edit.svg'></a>
+						|	<a onclick='return confirm(".'"Are you sure you want to delete?"'.")' href='itemedit.php?id=$r[4]'><img src='./asset/image/x.svg'></a>
 						|	</td>
 						|	</tr>";
 						|	}

@@ -30,7 +30,7 @@ html
 						|  if(isset($_POST['searchUser'])){
 						|    while($row = mysqli_fetch_assoc($result2)){
 						|      (($row['role'])? $roleName="User":$roleName="Admin");
-						|      echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='".$_SERVER['REQUEST_URI']."&action=edit&iid=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
+						|      echo "<tr><td>".$row['fname']."</td><td>".$row['email']."</td><td>".$roleName."</td><td>".$row['created']."</td><td><a href='userEdit2.php?id=".$row['uid']."'><img src='./asset/image/table-edit.svg' class='editIcon'></a><a onclick='return confirm(".'"Are you sure want to delete?"'.")'href='userEdit.php?id=".$row['uid']."'><img src='./asset/image/x.svg' class='delIcon'></a></td></tr>";
 						|  	}
 						|  }
 						|?>
