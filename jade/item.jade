@@ -13,12 +13,11 @@ html
 				#container2
 					table
 						tr
-							for a in ["Item Name","Catergory","Brand","Expire Date","Status","Action"]
+							for a in ["Item Name","Quantity","Requested Date","Status"]
 								th= a
-						for tr in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1,1,1,1,1,1]
-							tr
-								for b in [1,2,3,4,5]
-									td= b
-								td
-									img(src="./asset/image/table-edit.svg")
-									img(src="./asset/image/x.svg")
+						|<?php 
+						|    while($row = mysqli_fetch_assoc($result)){
+						|      (($row['status'])? $statusName="Available":$statusName="Unavailable");
+						|      echo "<tr><td>".$row['iname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['rDate']."</td><td>".$row['rStatus']."</td></tr>";
+						|  }
+						|?>

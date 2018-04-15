@@ -15,12 +15,18 @@ html
 						h3 Requested Stock
 						h3.number
 							|<?php 
+							|	while($row = mysqli_fetch_assoc($result)){
+							|		echo $row['requestNo'];
+							|	}
 							|	echo "0";
 							|?>
 					#expired
 						h3 Stock Expired
 						h3.number
 							|<?php 
+							|	while($row = mysqli_fetch_assoc($result1)){
+							|		echo $row['expiredItem'];
+							|	}
 							|	echo "0";
 							|?>
 				#chart

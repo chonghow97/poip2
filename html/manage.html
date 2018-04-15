@@ -28,10 +28,10 @@
           <div id="manage-content">
             <h4>Username
               <div id="manage-panel">
-                <form>
+                <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
                   <p>Your Name</p>
-                  <input type="text">
-                  <input type="submit" value="save">
+                  <input type="text" name="uname" required>
+                  <input type="submit" name="saveName" value="Save">
                 </form>
               </div>
             </h4>

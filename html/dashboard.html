@@ -60,6 +60,9 @@
             <h3>Requested Stock</h3>
             <h3 class="number">
               <?php 
+              	while($row = mysqli_fetch_assoc($result)){
+              		echo $row['requestNo'];
+              	}
               	echo "0";
               ?>
             </h3>
@@ -68,6 +71,9 @@
             <h3>Stock Expired</h3>
             <h3 class="number">
               <?php 
+              	while($row = mysqli_fetch_assoc($result1)){
+              		echo $row['expiredItem'];
+              	}
               	echo "0";
               ?>
             </h3>

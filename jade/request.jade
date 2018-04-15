@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-		- var title = "Add User"
+		- var title = "Request Item"
 		include _header
 	body#admin
 		include userheader
@@ -11,22 +11,26 @@ html
 				#title
 					h3 Item
 				#form_container
-					form
+					form(method="post" action!="<?php $_SERVER['PHP_SELF'] ?>")
 						p
 							label Item Name
-							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
-								option=option
-							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
-								option=option
+							select(name="itemName")
+								|<?php 
+								|	while($row = mysqli_fetch_assoc($result)){
+								|		echo "<option value='".$row['iid']."'>".$row['iname']."</option>";
+								|	}
+								|?>
 						p
 							label Quantity
-							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
-								option=option
-							select: for option in ["Apparatus", "Consumable", "Equipment","Reagent"]
-								option=option
+							input(type="number" name="quantity" min="1" step="0.01")
+							select(name="measureUnit").
+								<?php 
+									while($row = mysqli_fetch_assoc($result)){
+										echo "<option value='".$row['iid']."'>".$row['iname']."</option>";
+									}
+								?>
 						p
 							label Purpose
+							input(type="text" name="purpose")
 						p
-							textarea
-						p
-							input(type="submit")
+							input(type="submit" name="request" value="Request")
