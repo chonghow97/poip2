@@ -42,5 +42,5 @@ gulp.task('watch',function () {
 });
 
 //Default
-gulp.task('default',['jade','sass','watch','serve']);
+gulp.task('default',['sass','watch','serve']);
 

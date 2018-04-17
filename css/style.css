@@ -498,6 +498,9 @@ body#index {
         #sidebar ul li a:hover {
           background: #68707f; }
 
+a {
+  text-decoration: none; }
+
 #container {
   display: flex;
   background: #EBEBEB; }
@@ -571,9 +574,10 @@ body#index {
   background: #EF6F6C; }
 
 #chart {
-  border: 1px solid grey;
+  background: grey;
+  padding: 1rem;
   width: 70%;
-  height: 18rem;
+  height: 11rem;
   margin: auto;
   box-sizing: border-box; }
   #chart #title {
