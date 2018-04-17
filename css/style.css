@@ -326,6 +326,9 @@ table {
 .editIcon, .delIcon {
   cursor: pointer; }
 
+a, h3 {
+  text-decoration: none; }
+
 body#index {
   height: 100vh;
   background: url("../asset/image/index_background.png");

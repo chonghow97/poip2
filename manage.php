@@ -11,10 +11,11 @@
 	
 	if(isset($_POST['saveName'])){
 		$uname = $_POST['uname'];
-		$sql2 = "UPDATE user
-				SET fname ='$uname'
-				WHERE uid = '$_SESSION[userID]'";
-		$result2 = mysqli_query($link,$sql2);
+		$sql2 = "UPDATE user SET fname ='$uname' WHERE uid = '$_SESSION[userID]'";
+		if($result2 = mysqli_query($link,$sql2)){
+			$sql3 = mysqli_query($link,"UPDATE user SET firstlogin=1");
+			echo "<script>alert('password changed successfully')</script>";
+		}
 	}
 
 	require './html/manage.html';

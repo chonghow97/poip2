@@ -62,7 +62,7 @@
         </div>
         <div id="container-z">
           <div id="requested">
-            <a href="requestAdmin.php" style="display: block;height:160px;"><h3>Requested Stock</h3></a>
+            <a href="requestAdmin.php" style="text-decoration: none; display: block;height:160px;"><h3>Requested Stock</h3></a>
             <h3 class="number">
               <?php 
               	while($row = mysqli_fetch_assoc($result)){
@@ -72,7 +72,7 @@
             </h3>
           </div>
           <div id="expired">
-            <a href="expiredStock.php" style="display: block;height:160px;"><h3>Expired Stock</h3></a>
+            <a href="expiredStock.php" style="text-decoration: none; display: block;height:160px;"><h3>Expired Stock</h3></a>
             <h3 class="number">
               <?php 
               	while($row = mysqli_fetch_assoc($result1)){
@@ -83,7 +83,7 @@
           </div>
         </div>
             <div id="expired" style="background: grey">
-            <a href="expiredStock.php" style="display: block;height:160px;"><h3>Expired Stock</h3></a>
+            <a href="expiredStock.php" style="text-decoration: none; display: block;height:160px;"><h3>Expired Stock</h3></a>
             <h3 class="number">
                <?php 
                 while($row = mysqli_fetch_assoc($result2)){

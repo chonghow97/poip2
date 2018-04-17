@@ -1,4 +1,5 @@
 <?php
+	session_start();
 		if($_SESSION['role']){
 			header('Location:user.php');
 		}
