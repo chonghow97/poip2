@@ -8,12 +8,28 @@
 	require_once 'conn.php';
 	$sql = "SELECT * FROM category";
 	$result = mysqli_query($link,$sql);
+
+	if(isset($_POST['add'])){
+		$category = $_POST['category'];
+		$status = $_POST['status'];
+		$item = $_POST['item'];
+		$sql2 = "SELECT i.iname,c.cname,m.mname,i.status,i.iid 
+				FROM item as i,`measure` as m,`category` as c
+				WHERE i.cid = c.cid AND i.mid = m.mid AND i.cid = c.cid AND i.mid = m.mid AND i.iname LIKE '%$item%' AND i.cid='$category' AND i.status='$status';";
+		$result2 = mysqli_query($link,$sql2);
+		$row2 = mysqli_fetch_all($result2);
+		foreach ($row2 as $r2=>$l2) {
+			($l2[3])? ($row2[$r2][3] = "Available") : ($row2[$r2][3] = "Unavailable");
+		}
+	}
+	else{
 		$sql2 = "SELECT i.iname,c.cname,m.mname,i.status,i.iid FROM item as i,`measure` as m,`category` as c where i.cid = c.cid AND i.mid = m.mid";
 		$result2 = mysqli_query($link,$sql2);
 		$row2 = mysqli_fetch_all($result2);
 		foreach ($row2 as $r2=>$l2) {
 			($l2[3])? ($row2[$r2][3] = "Available") : ($row2[$r2][3] = "Unavailable");
 		}
+	}
 
 	if(isset($_GET['id'])){
 		$id = $_GET['id'];

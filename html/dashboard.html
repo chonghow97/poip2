@@ -46,7 +46,7 @@
           <li><a href="stock.php"><img src="./asset/image/add.svg">
               <p>Add</p></a></li>
           <li class="item"><a href="stockEdit.php"><img src="./asset/image/edit.svg">
-              <p>Edit</p></a></li>
+              <p>View</p></a></li>
           <li><img src="./asset/image/user.svg">
             <p>User</p>
           </li>
@@ -62,35 +62,38 @@
         </div>
         <div id="container-z">
           <div id="requested">
-            <h3>Requested Stock</h3>
+            <a href="requestAdmin.php" style="display: block;height:160px;"><h3>Requested Stock</h3></a>
             <h3 class="number">
               <?php 
               	while($row = mysqli_fetch_assoc($result)){
               		echo $row['requestNo'];
               	}
-              	echo "0";
               ?>
             </h3>
           </div>
           <div id="expired">
-            <h3>Stock Expired</h3>
+            <a href="expiredStock.php" style="display: block;height:160px;"><h3>Expired Stock</h3></a>
             <h3 class="number">
               <?php 
               	while($row = mysqli_fetch_assoc($result1)){
               		echo $row['expiredItem'];
               	}
-              	echo "0";
               ?>
             </h3>
           </div>
         </div>
         <div id="chart">
           <div id="title">
-            <h3>Total Stock</h3>
+            <a href="lowStockItem.php" style="display: block;height:160px;"><h3>Low Stock Item</h3></a>
+            <h3 class="number">
+              <?php 
+                while($row = mysqli_fetch_assoc($result2)){
+                  echo $row['lowStockItem'];
+                }
+              ?>
+            </h3>
           </div>
-          <div id="chart-inside">
-            <h1>Chart here</h1>
-          </div>
+          
         </div>
       </div>
     </div>

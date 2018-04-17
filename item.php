@@ -6,7 +6,7 @@
 	} 
 
 	require_once 'conn.php';
-	$sql = "SELECT * FROM request JOIN item ON request.iid=item.iid JOIN measure ON request.mid=measure.mid";
+	$sql = "SELECT * FROM request JOIN item ON request.iid=item.iid JOIN measure ON item.mid=measure.mid";
 	$result = mysqli_query($link,$sql);
 
 	require './html/item.html';

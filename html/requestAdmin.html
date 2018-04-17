@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Edit User</title>
+    <title>Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -58,38 +58,33 @@
       </div>
       <div id="container1">
         <div id="title">
-          <h3>Edit</h3>
+          <h3>Requested Item</h3>
         </div>
-        <div id="container2">
-          <div id="filter" style="width: 50%">
-            <form action="stockEdit.php" method="post">
-<!--               <p>
-                 <label>Stock Date:</label>
-                <input type="date" style="margin-left: 3rem">
-              </p> -->
-              <br><br>
-              <input type="text" name="fname">
-              <input type="submit" name="search" value="Search">
-            </form>
-          </div>
+          <div id="container2">
           <table>
             <tr>
-              <th>Item name</th>
+              <th>Item Name</th>
               <th>Quantity</th>
-              <th>Expire Date</th>
+              <th>Requested By</th>
+              <th>Purpose</th>
+              <th>Requested Date</th>
+              <th>Status</th>
+              <th>Action</th>
             </tr><?php 
-             if(isset($_POST['search'])){
-               while($row = mysqli_fetch_assoc($result2)){
-                 echo "<tr><td>".$row['iname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['expire']."</td></tr>";
-             	}
+               while($row = mysqli_fetch_assoc($result)){
+                 (($row['status'])? $statusName="Available":$statusName="Unavailable");
+                 echo "<tr><td>".$row['iname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['fname']."</td><td>".$row['purpose']."</td><td>".$row['rDate']."</td><td>".$row['rStatus']."</td><td>";
+                  if($row['rStatus']=="Pending"){
+                    echo "<a href='stock.php?rid=".$row['rid']."'>Stock Up</a>";
+                  }
+                  else{
+                    echo "-";
+                } 
+                  echo "</td></tr>";
              }
-             else {
-              while($row = mysqli_fetch_assoc($result)){
-                 echo "<tr><td>".$row['iname']."</td><td>".$row['quantity']." ".$row['mname']."</td><td>".$row['expire']."</td></tr>";
-              }
-            }
             ?>
           </table>
+        </div>
         </div>
       </div>
     </div>

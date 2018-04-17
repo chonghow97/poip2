@@ -48,10 +48,12 @@
         </div>
         <div id="container-z">
           <div id="requested">
-            <h3>Requested Stock</h3>
+            <a href="item.php" style="display: block;height:160px;"><h3>Requested Stock</h3></a>
             <h3 class="number">
               <?php 
-              	echo "0";
+                while($row = mysqli_fetch_assoc($result)){
+                  echo $row['requestNo'];
+                }
               ?>
             </h3>
           </div>

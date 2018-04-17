@@ -67,20 +67,42 @@
                 <label>Item Name</label>
                 <select name="item">
                   <?php 
-                  	foreach($user as $u => $v){
-                  		echo "<option value='".$user[$u][iid]."'>".$user[$u][iname]."</option>";
-                  	}
+                    if((!isset($_GET['rid'])) AND (!isset($_GET['iid']))){
+                  	 foreach($user as $u => $v){
+                  		  echo "<option value='".$user[$u][iid]."'>".$user[$u][iname]."</option>";
+                  	 }
+                    }
+                    else if(isset($_GET['iid'])){
+                      while($row = mysqli_fetch_assoc($result4)){
+                      echo "<option value='".$row['iid']."'>".$row['iname']."</option>";
+                    }
+                    }
+                    else if(isset($_GET['rid'])){
+                      while($row = mysqli_fetch_assoc($result1)){
+                      echo "<option value='".$row['iid']."'>".$row['iname']."</option>";
+                    }
+                    }
                   ?>
                   
                 </select>
               </p>
               <p>
                 <label>Quantity</label>
-                <input type="number" min="1" name="quantity">
+                <?php
+                  if(!isset($_GET['rid'])){
+                    echo "<input type='number' min='1' name='quantity' required>";
+                  }
+                  else{
+                    while($row = mysqli_fetch_assoc($result3)){
+                      $quantity = $row['quantity'];
+                      echo "<input type='number' min='".$quantity."' name='quantity' required value='".$quantity."'>";
+                    }
+                  }
+                ?>
               </p>
               <p>
                 <label>Expiry date</label>
-                <input type="date" name="exp">
+                <input type="date" name="exp" required>
               </p>
               <p>
                 <input type="submit" name="add">
