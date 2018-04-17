@@ -94,7 +94,7 @@ if(isset($_POST['add'])){
 				if($result=mysqli_query($link,$sql)){
 					echo "<script>alert('Added Successfully')</script>";
 				}else{
-					echo "<script>alert('mysqli_error($link)')</script>";
+					echo "<script>alert('".mysqli_error($link)."')</script>";
 				}
 			}
 		}

@@ -12,13 +12,15 @@
       <div id="panel">
         <div id="profile_pic"><img src="asset/image/admin.png"></div>
         <div id="infomation">
-          <h3>Admin</h3>
-          <h3><span>abc123@gmail.com</span></h3>
+          <?php
+          echo "<h3>".$_SESSION['loginUsername']."</h3>";
+          echo "<h3><span>".$_SESSION['email']."</span></h3>";
+          ?>
           <ul>
             <li><a href="manage.php"><img src="asset/image/manage.svg">Username</a></li>
             <li><a href="managepassword.php"><img src="asset/image/password.svg">Password</a></li>
             <li><a href="#"><img src="asset/image/najib.svg">Profile Picture</a></li>
-            <li><a href="manage.php?back=unknown"><img src="asset/image/home-grey	.svg">Back To Dashboard</a></li>
+            <li><a href="redirectFromManage.php"><img src="asset/image/home-grey	.svg">Back To Dashboard</a></li>
           </ul>
         </div>
       </div>

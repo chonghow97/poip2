@@ -17,14 +17,5 @@
 		$result2 = mysqli_query($link,$sql2);
 	}
 
-	if(isset($_GET['back'])){
-		if($_SESSION['role']){
-			header('Location:request.php');
-		}
-		else{
-			header('Location:dashboard.php');
-		}
-	}
-
 	require './html/manage.html';
  ?>
